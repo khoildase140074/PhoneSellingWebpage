@@ -1,0 +1,75 @@
+﻿.editPhone {
+    position: absolute;
+    width: 900px;
+    height: 500px;
+    display: inline-block;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(52, 85, 139, 0.6);
+    vertical-align: middle;
+    top: 20%;
+    left: 23%;
+    background-color: #fff;
+    text-align: left;
+}
+
+.epimg {
+    float: left;
+    width: 50%;
+    height: 100%;
+}
+
+.information {
+    float: right;
+    width: 42%;
+    height: 80%;
+    margin-bottom: 40px;
+    margin-top: 30px;
+    padding-top: 5px;
+    text-align: justify;
+}
+
+.detail {
+    margin-top: 18px;
+}
+
+.i {
+    border-right: 1px solid #DBDBDB;
+}
+
+.detail .ii {
+    width: 280px;
+}
+
+.editt {
+    background: none;
+    color: #4e79bf;
+    border: none;
+    font-size: 22px;
+    margin-top: 40px;
+}
+
+    .editt:hover {
+        background-color: rgba(52, 85, 139, 0.6);
+        color: #fff;
+    }
+
+.back {
+    background: none;
+    display: block;
+    position: absolute;
+    border: none;
+    top: 75%;
+    margin-left: 100px;
+    outline: none;
+    font-size: 22px;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    color: rgba(52, 85, 139, 1);
+}
+
+    .back:hover {
+        background-color: rgba(52, 85, 139, 0.6);
+        color: #fff;
+    }
+
+.num {
+    width: 60px;
+}

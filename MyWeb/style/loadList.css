@@ -1,0 +1,337 @@
+﻿html, body {
+    padding: 0;
+    margin: 0;
+}
+
+.dropBtn {
+    background-color: #34558b;
+    color: white;
+    padding: 12px;
+    font-size: 18px;
+    border: none;
+    margin-left: 10px;
+    margin-top: 5px;
+    outline: none;
+}
+
+.dropBtn1 {
+    background-color: #34558b;
+    color: white;
+    padding: 12px;
+    font-size: 18px;
+    border: none;
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-right: 60px;
+    outline: none;
+}
+
+.acBtn {
+    background-color: #34558b;
+    color: white;
+    padding: 12px;
+    font-size: 18px;
+    border: none;
+    margin-left: 10px;
+    margin-top: 5px;
+    outline: none;
+}
+
+.d1 {
+    display: inline-block;
+    float: right;
+    margin-right: 20px;
+}
+
+    .d1 .acBtn:hover {
+        background-color: #183769;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+
+.f1 {
+    display: inline-block;
+}
+
+.d2 {
+    display: inline-block;
+    margin-left: 130px;
+}
+
+    .d2 .acBtn:hover {
+        background-color: #183769;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+.d3 {
+    display: inline-block;
+}
+
+    .d3 .acBtn:hover {
+        background-color: #183769;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+.d4 {
+    display: inline-block;
+    margin-left: 20px;
+    margin-right: 30px;
+}
+
+    .d4 .acBtn:hover {
+        background-color: #183769;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+.d5 {
+    display: inline-block;
+    margin-left: 30px;
+    margin-right: 20px;
+}
+
+    .d5 .acBtn:hover {
+        background-color: #183769;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+.dropBtn:hover {
+    background-color: #183769;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.dropBtn1:hover {
+    background-color: #183769;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.topnav .search1 {
+    display: inline-block;
+    margin-left: 20px;
+    float: left;
+}
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    outline: none;
+}
+
+.dropdown-content {
+    visibility: hidden;
+    opacity: 0;
+    transition-property: opacity, visibility;
+    transition-duration: .4s, 0s;
+    transition-delay: 0s, .4s;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 110px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    outline: none;
+}
+
+    .dropdown-content button {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        background-color: #ffffff;
+        border: none;
+        width: 110px;
+    }
+
+        .dropdown-content button:hover {
+            background-color: rgba(52, 85, 139, 0.8);
+            color: white;
+        }
+
+.dropdown:hover .dropdown-content {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s, 0s;
+}
+
+
+.topnav {
+    background-color: #34558b;
+    height: 55px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+.txtSearch {
+    width: 300px;
+    height: 38px;
+    border-radius: 20px;
+    border: none;
+    margin-top: 8px;
+    padding-left: 14px;
+    font-size: 16px;
+    font-weight: 100;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    outline: none;
+}
+
+.iconsearch {
+    display: inline-block;
+    float: right;
+    margin-top: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
+    background: none;
+    color: white;
+    font-size: 17px;
+    border: none;
+    border-left: none;
+    cursor: pointer;
+    outline: none;
+}
+
+    .iconsearch:hover {
+        background-color: #183769;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+.product {
+    display: inline-block;
+    outline: none;
+    
+}
+
+.btnProduct {
+    background: #fff;
+    border: none;
+    margin-left: 10px;
+    outline: none;
+    height: 200px;
+    margin-bottom: 200px;
+}
+
+.productPrice {
+    color: #34558b;
+    font-weight: bold;
+    outline: none;
+}
+
+.bodyy {
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.productImg {
+    width: 90%;
+    height: 60%;
+    margin-top: 5px;
+    padding-top: 10px;
+    padding-left: 20px;
+    outline: none;
+    
+}
+
+.all {
+    width: 250px;
+    height: 350px;
+    border: 1px solid #fff;
+    outline: none;
+    display: inline-block;
+    
+}
+
+    .all:hover {
+        transform: scale(1.1);
+        color: #34558b;
+        border: 1px solid #34558b;
+    }
+
+.slide {
+    display: block;
+    width: 80%;
+    height: 400px;
+    margin-left: 70px;
+    margin-right: 70px;
+    margin-bottom: 100px;
+    position: relative;
+}
+
+.mySlides {
+    display: none;
+    width: 100%;
+    height: 100%;
+    margin-top: 40px;
+    margin-bottom: 100px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+.w3-left, .w3-right, .w3-badge {
+    cursor: pointer
+}
+
+.w3-badge {
+    height: 13px;
+    width: 13px;
+    padding: 0
+}
+
+.btnleft {
+    width: 50px;
+    height: 50px;
+    background: none;
+    position: absolute;
+    top: 90px;
+    margin-top: -25px; 
+    color: #fff;
+    outline: none;
+    border: none;
+    left: 0%;
+}
+
+    .btnleft:hover {
+        background-color: rgba(52, 85, 139, 0.6);
+    }
+
+.btnright {
+    width: 50px;
+    height: 50px;
+    background: none;
+    position: absolute;
+    left: 112%;
+    top: 90px;
+    margin-top: -25px; 
+    color: #fff;
+    outline: none;
+    border: none;
+}
+
+    .btnright:hover {
+        background-color: rgba(52, 85, 139, 0.6);
+    }
+
+    .dot {
+        position: absolute;
+        top: 90px;
+        left: 55%;
+    }
+
+.page {
+    background: none;
+    position: center;
+    border: none;
+    top: 75%;
+   
+    outline: none;
+    font-size: 22px;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    color: rgba(52, 85, 139, 1);
+}
+
+    .page:hover {
+        background-color: rgba(52, 85, 139, 0.6);
+        color: #fff;
+    }
+
+#form-page {
+    display: inline-block;
+    margin: 10px;
+    margin-left: 10px;
+    align-content: center;
+}

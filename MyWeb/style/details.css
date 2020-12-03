@@ -1,0 +1,110 @@
+﻿.content {
+    position: absolute;
+    width: 800px;
+    height: 400px;
+    display: block;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(52, 85, 139, 0.6);
+    vertical-align: middle;
+    top: 20%;
+    left: 25%;
+    background-color: #fff;
+}
+
+.word {
+    float: right;
+    width: 55%;
+    height: 100%;
+    margin-bottom: 10px;
+    margin-top: 40px;
+}
+
+.image {
+    float: left;
+    width: 45%;
+    height: 80%;
+}
+
+.imgg {
+    max-width: 100%;
+    border-radius: 30px 0 0 30px;
+    margin-left: 20px;
+    border-right: 1px solid #DBDBDB;
+    margin-bottom: 10px;
+    margin-top: 40px;
+}
+
+.c-name {
+    font-size: 22px;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    text-align: center;
+    color: #34558b;
+    margin-bottom: 50px;
+}
+
+.c-status {
+    font-size: 22px;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    text-align: left;
+    color: #FA8900;
+    margin-bottom: 40px;
+}
+
+.c-price {
+    font-size: 22px;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    text-align: left;
+    color: #FA8900;
+    margin-bottom: 30px;
+}
+
+.please {
+    font-size: 24px;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    text-align: left;
+    outline: none;
+}
+
+    .please a {
+        text-decoration: none;
+        color: #34558b;
+    }
+
+        .please a:hover {
+            color: #F64747;
+        }
+
+.back {
+    background: none;
+    display: block;
+    position: absolute;
+    border: none;
+    top: 75%;
+    margin-left: 100px;
+    outline: none;
+    font-size: 22px;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    color: rgba(52, 85, 139, 1);
+}
+
+    .back:hover {
+        background-color: rgba(52, 85, 139, 0.6);
+        color: #fff;
+    }
+
+.editt {
+    background: none;
+    color: #4e79bf;
+    border: none;
+    font-size: 22px;
+    position: absolute;
+    top: 85%;
+    outline: none;
+}
+    .editt:hover {
+        background-color: rgba(52, 85, 139, 0.6);
+        color: #fff;
+    }
+
+.ipA {
+    outline: none;
+}

@@ -1,0 +1,216 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/style/manageAccount.css">
+    <link rel="stylesheet" href="~/style/loadList.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    @{ MyWeb.Models.Account acc = (MyWeb.Models.Account)HttpContext.Current.Session["Account"]; }
+    @{ MyWeb.Objects.Order cart = (MyWeb.Objects.Order)HttpContext.Current.Session["CART"]; }
+    <title>@acc.FullName 's ViewCart</title>
+</head>
+<body>
+    @{ List<MyWeb.Models.Brand> brand = (List<MyWeb.Models.Brand>)HttpContext.Current.Session["Brand"]; }
+    @{ List<MyWeb.Models.Category> category = (List<MyWeb.Models.Category>)HttpContext.Current.Session["Category"];}
+    <div class="topnav">
+        <div class="dropdown">
+            <button class="dropBtn">Brand</button>
+            <div class="dropdown-content">
+                @foreach (MyWeb.Models.Brand b in brand)
+                {
+                    <form action="~/Phone/SearchPhone" method="POST">
+                        <button name="txtBrandID" value="@b.BrandID">@b.BrandName</button>
+                    </form>
+                }
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropBtn">Category</button>
+            <div class="dropdown-content">
+                @foreach (MyWeb.Models.Category c in category)
+                {
+                    <form action="~/Phone/SearchPhone" method="POST">
+                        <button name="txtCategoryID" value="@c.CategoryID">@c.CategoryName</button>
+                    </form>
+                }
+            </div>
+        </div>
+
+        @if (HttpContext.Current.Session["CART"] != null)
+        {
+            <div class="d5">
+                <form action="~/Cart/ViewCart" method="post">
+                    <button class="acBtn" type="submit">Your Cart</button>
+                </form>
+            </div>
+        }
+        @if ((MyWeb.Models.Account)HttpContext.Current.Session["Account"] != null)
+        {
+            if (acc.RoleID.Equals("1"))
+            {
+                <div class="d2">
+                    <form action="~/Cart/ManageOrder" method="post">
+                        <input type="hidden" name="username" value="@acc.Username" />
+                        <button class="acBtn" type="submit">Manage Order</button>
+                    </form>
+                </div>
+            }
+            else
+            {
+                <div class="d4">
+                    <form action="~/Cart/ViewOrder" method="post">
+                        <input type="hidden" name="txtUsername" value="@acc.Username" />
+                        <button class="acBtn" type="submit">Your Orders</button>
+                    </form>
+                </div>
+            }
+        }
+        @if ((MyWeb.Models.Account)HttpContext.Current.Session["Account"] != null)
+        {
+            if (acc.RoleID.Equals("1"))
+            {
+                <div class="d3">
+                    <form action="~/Phone/CreatePhone" method="post">
+                        <button class="acBtn" type="submit">Create Phone</button>
+                    </form>
+                </div>
+                <div class="d3">
+                    <form action="~/Home/ManageAccount" method="post">
+                        <button class="acBtn" type="submit">Manage Account</button>
+                    </form>
+                </div>
+            }
+        }
+        @if ((MyWeb.Models.Account)HttpContext.Current.Session["Account"] != null)
+        {
+            <div class="d1">
+
+                <div class="logout">
+                    <font color="#fff" style="font-size: 16px">Welcome, @acc.FullName</font>
+                    <form action="~/Home/Logout" method="post" class="f1">
+                        <button class="acBtn" type="submit">Log out</button>
+                    </form>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="d1">
+                <form action="~/Home/Index" class="f1">
+                    <button class="acBtn" type="submit">Log in</button>
+                </form>
+            </div>
+        }
+        <div class="search1" style="max-width: 1500px">
+            <form action="~/Phone/SearchPhone" method="POST" class="search">
+                <input class="txtSearch" type="search" id="search_phone" name="txtSearch" placeholder="what do you need..." />
+                <button class="iconsearch" type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+    </div>
+    <div>
+        <center>
+            <div class="header1">
+                <h1>View Your Cart</h1>
+            </div>
+            @if (cart != null)
+            {
+                if (cart.detailList.Count != 0)
+                {
+                    <table border="1" class="tbl">
+                        <thead>
+                            <tr>
+                                <th>Product Name</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Quantity Storage</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                        @foreach (MyWeb.Objects.OrderDetail detail in cart.detailList)
+                        {
+                            <tr>
+                                <td align="center">
+                                    @detail.ProductName
+                                </td>
+                                <td align="center">
+                                    @detail.Quantity
+                                </td>
+                                <td align="center">
+                                    @detail.Price &#8363;
+                                </td>
+                                <td align="center">
+                                    <form action="~/Cart/UpdateQuantity" method="post">
+                                        <input type="hidden" name="id" value="@detail.IDProduct" />
+                                        <input type="number" required name="quantity" value="@detail.Quantity" min="1" max="@detail.Store" />
+                                        <button class="btnUpdate" type="submit" value="Update Quantity">Change</button>
+                                    </form>
+                                </td>
+                                <td align="center">@detail.Store</td>
+                                <td align="center">
+                                    <form action="~/Cart/DeleteDetail" method="post">
+                                        <input type="hidden" name="id" value="@detail.IDProduct" />
+                                        <button class="btnUpdate" type="submit" value="Delete">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                        <tr><td class="total" colspan="6">&nbsp; Total: @cart.Total &#8363;</td></tr>
+                    </table>
+                    <br /> <br />
+                    <table border="1" class="tbl">
+                        <thead>
+                            <tr>
+                                <th>Cart Name</th>
+                                <th>Created Time</th>
+                                <th>Payment Method</th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <td align="center">
+                                @cart.CartName
+                            </td>
+                            <td align="center">
+                                @cart.DateGet
+                            </td>
+                            <td align="center">
+                                @cart.Payment
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td class="total" colspan="3">
+                                &nbsp; Total: @cart.Total &#8363;
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="final">
+                        <form action="~/Cart/ConfirmCart" method="post">
+                            <button class="sub" type="submit" value="Confirm Payment">Confirm information and Buy</button>
+                        </form>
+                    </div>
+                }
+
+                else
+                {
+                    @Html.Display("Empty");
+                }
+            }
+            else
+            {
+                @Html.Display("There is no cart here!");
+            }
+        </center>
+    </div>
+    <form action="~/Phone/LoadList">
+        <button class="back" type="submit" value="Go Back">Go Back Here</button>
+    </form>
+</body>
+</html>

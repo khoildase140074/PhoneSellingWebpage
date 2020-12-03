@@ -1,0 +1,64 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/style/style.css" />
+    <link rel="stylesheet" href="~/style/editPhone.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js" integrity="sha512-UdIMMlVx0HEynClOIFSyOrPggomfhBKJE28LKl8yR3ghkgugPnG6iLfRfHwushZl1MOPSY6TsuBDGPK2X4zYKg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/additional-methods.min.js" integrity="sha512-6Uv+497AWTmj/6V14BsQioPrm3kgwmK9HYIyWP+vClykX52b0zrDGP7lajZoIY1nNlX4oQuh7zsGjmF7D0VZYA==" crossorigin="anonymous"></script>
+    <script src="~/js/script1.js"></script>
+    <title>CreateAccount</title>
+</head>
+<body>
+    <div class="header1">
+        <center>
+            <h1>Be our member to get all concesssionaries now</h1>
+        </center>
+    </div>
+    <div class="editPhone">
+        <div class="information">
+            <form action="~/Home/Create" method="post" id="create-form">
+                <div class="detail">
+                    User Name <input type="text" name="id" />
+                </div>
+                <div class="detail">
+                    Password <input type="password" name="password" />
+                </div>
+
+                <div class="detail">
+                    Full Name <input type="text" name="fullname" />
+                </div>
+
+                <div class="detail">
+                    Phone Number <input type="number" name="phonenumber" />
+                </div>
+
+                <div class="detail">
+                    Address <input type="text" name="address" />
+                </div>
+
+                <div class="detail">
+                    Date Of Birth <input type="date" name="date" />
+                </div>
+                <div class="detail">
+                    <button class="editt" type="submit" value="Register">Sign Up</button>
+                </div>
+            </form>
+        </div>
+        <div class="epimg">
+            <img class="i" src="~/images/54950.jpg" style="width: 100%; height: 100%" />
+        </div>
+    </div>
+    <form action="~/Phone/LoadList">
+        <button class="back" type="submit" value="Go Back">Go Back Here</button>
+    </form>
+</body>
+</html>

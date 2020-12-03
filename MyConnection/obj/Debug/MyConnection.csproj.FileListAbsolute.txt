@@ -1,0 +1,36 @@
+D:\C#\Project\MyWeb\MyConnection\bin\Debug\MyConnection.dll
+D:\C#\Project\MyWeb\MyConnection\bin\Debug\MyConnection.pdb
+D:\C#\Project\MyWeb\MyConnection\obj\Debug\MyConnection.csprojAssemblyReference.cache
+D:\C#\Project\MyWeb\MyConnection\obj\Debug\MyConnection.csproj.CoreCompileInputs.cache
+D:\C#\Project\MyWeb\MyConnection\obj\Debug\MyConnection.dll
+D:\C#\Project\MyWeb\MyConnection\obj\Debug\MyConnection.pdb
+C:\Users\HOME\Desktop\C# PROJECT\31-10\Project\MyWeb\MyConnection\bin\Debug\MyConnection.dll
+C:\Users\HOME\Desktop\C# PROJECT\31-10\Project\MyWeb\MyConnection\bin\Debug\MyConnection.pdb
+C:\Users\HOME\Desktop\C# PROJECT\31-10\Project\MyWeb\MyConnection\obj\Debug\MyConnection.csprojAssemblyReference.cache
+C:\Users\HOME\Desktop\C# PROJECT\31-10\Project\MyWeb\MyConnection\obj\Debug\MyConnection.csproj.CoreCompileInputs.cache
+C:\Users\HOME\Desktop\C# PROJECT\31-10\Project\MyWeb\MyConnection\obj\Debug\MyConnection.dll
+C:\Users\HOME\Desktop\C# PROJECT\31-10\Project\MyWeb\MyConnection\obj\Debug\MyConnection.pdb
+D:\C#\Project\4.11\MyWeb (1)\MyWeb\MyConnection\bin\Debug\MyConnection.dll
+D:\C#\Project\4.11\MyWeb (1)\MyWeb\MyConnection\bin\Debug\MyConnection.pdb
+D:\C#\Project\4.11\MyWeb (1)\MyWeb\MyConnection\obj\Debug\MyConnection.csprojAssemblyReference.cache
+D:\C#\Project\4.11\MyWeb (1)\MyWeb\MyConnection\obj\Debug\MyConnection.csproj.CoreCompileInputs.cache
+D:\C#\Project\4.11\MyWeb (1)\MyWeb\MyConnection\obj\Debug\MyConnection.dll
+D:\C#\Project\4.11\MyWeb (1)\MyWeb\MyConnection\obj\Debug\MyConnection.pdb
+C:\Users\hp\Desktop\MyWeb 7.11\MyWeb\MyConnection\bin\Debug\MyConnection.dll
+C:\Users\hp\Desktop\MyWeb 7.11\MyWeb\MyConnection\bin\Debug\MyConnection.pdb
+C:\Users\hp\Desktop\MyWeb 7.11\MyWeb\MyConnection\obj\Debug\MyConnection.csprojAssemblyReference.cache
+C:\Users\hp\Desktop\MyWeb 7.11\MyWeb\MyConnection\obj\Debug\MyConnection.csproj.CoreCompileInputs.cache
+C:\Users\hp\Desktop\MyWeb 7.11\MyWeb\MyConnection\obj\Debug\MyConnection.dll
+C:\Users\hp\Desktop\MyWeb 7.11\MyWeb\MyConnection\obj\Debug\MyConnection.pdb
+C:\Users\HOME\Desktop\C# PROJECT\12.11\MyWebWithFrontEnd\MyWeb 7.11\MyWeb\MyConnection\bin\Debug\MyConnection.dll
+C:\Users\HOME\Desktop\C# PROJECT\12.11\MyWebWithFrontEnd\MyWeb 7.11\MyWeb\MyConnection\bin\Debug\MyConnection.pdb
+C:\Users\HOME\Desktop\C# PROJECT\12.11\MyWebWithFrontEnd\MyWeb 7.11\MyWeb\MyConnection\obj\Debug\MyConnection.csprojAssemblyReference.cache
+C:\Users\HOME\Desktop\C# PROJECT\12.11\MyWebWithFrontEnd\MyWeb 7.11\MyWeb\MyConnection\obj\Debug\MyConnection.csproj.CoreCompileInputs.cache
+C:\Users\HOME\Desktop\C# PROJECT\12.11\MyWebWithFrontEnd\MyWeb 7.11\MyWeb\MyConnection\obj\Debug\MyConnection.dll
+C:\Users\HOME\Desktop\C# PROJECT\12.11\MyWebWithFrontEnd\MyWeb 7.11\MyWeb\MyConnection\obj\Debug\MyConnection.pdb
+D:\C#\Project\12.11.2\12.11\12.11\MyWebWithFrontEnd\MyWeb 7.11\MyWeb\MyConnection\bin\Debug\MyConnection.dll
+D:\C#\Project\12.11.2\12.11\12.11\MyWebWithFrontEnd\MyWeb 7.11\MyWeb\MyConnection\bin\Debug\MyConnection.pdb
+D:\C#\Project\12.11.2\12.11\12.11\MyWebWithFrontEnd\MyWeb 7.11\MyWeb\MyConnection\obj\Debug\MyConnection.csprojAssemblyReference.cache
+D:\C#\Project\12.11.2\12.11\12.11\MyWebWithFrontEnd\MyWeb 7.11\MyWeb\MyConnection\obj\Debug\MyConnection.csproj.CoreCompileInputs.cache
+D:\C#\Project\12.11.2\12.11\12.11\MyWebWithFrontEnd\MyWeb 7.11\MyWeb\MyConnection\obj\Debug\MyConnection.dll
+D:\C#\Project\12.11.2\12.11\12.11\MyWebWithFrontEnd\MyWeb 7.11\MyWeb\MyConnection\obj\Debug\MyConnection.pdb

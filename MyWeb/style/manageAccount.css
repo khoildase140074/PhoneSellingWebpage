@@ -1,0 +1,75 @@
+﻿.tbl {
+    border-collapse: collapse;
+    outline: none;
+}
+
+.header1 {
+    margin-top: 5%;
+    margin-bottom: 30px;
+    color: #34558b;
+}
+
+tr th {
+    color: #34558b;
+    height: 30px;
+}
+
+tr td {
+    width: 230px;
+    height: 50px;
+    font-size: 18px;
+}
+
+.btnUpdate {
+    font-size: 18px;
+    border: none;
+    background: none;
+    color: #34558b;
+    font-weight: 300;
+    outline: none;
+}
+
+    .btnUpdate:hover {
+        background: rgba(51, 85, 139, 0.8);
+        color: #fff;
+    }
+
+.back {
+    background: none;
+    display: block;
+    position: absolute;
+    border: none;
+    top: 50%;
+    margin-left: 100px;
+    outline: none;
+    font-size: 22px;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    color: rgba(52, 85, 139, 1);
+}
+
+
+    .back:hover {
+        background-color: rgba(52, 85, 139, 0.6);
+        color: #fff;
+    }
+
+.total {
+    font-weight: bold;
+}
+
+.final {
+    margin-top: 20px;
+}
+
+.sub {
+    font-size: 22px;
+    background: none;
+    border: 1px solid #34558b;
+    color: #34558b;
+    outline: none;
+}
+
+    .sub:hover {
+        background-color: rgba(52, 85, 139, 0.6);
+        color: #fff;
+    }

@@ -1,0 +1,175 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/style/style.css" />
+    <link rel="stylesheet" href="~/style/editPhone.css" />
+    <link rel="stylesheet" href="~/style/loadList.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js" integrity="sha512-UdIMMlVx0HEynClOIFSyOrPggomfhBKJE28LKl8yR3ghkgugPnG6iLfRfHwushZl1MOPSY6TsuBDGPK2X4zYKg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/additional-methods.min.js" integrity="sha512-6Uv+497AWTmj/6V14BsQioPrm3kgwmK9HYIyWP+vClykX52b0zrDGP7lajZoIY1nNlX4oQuh7zsGjmF7D0VZYA==" crossorigin="anonymous"></script>
+    <script src="~/js/script1.js"></script>
+    <title>CreatePhone</title>
+</head>
+<body>
+    @{MyWeb.Models.Account acc = (MyWeb.Models.Account)HttpContext.Current.Session["Account"]; }
+    @{ List<MyWeb.Models.Brand> brand = (List<MyWeb.Models.Brand>)HttpContext.Current.Session["Brand"]; }
+    @{ List<MyWeb.Models.Category> category = (List<MyWeb.Models.Category>)HttpContext.Current.Session["Category"]; }
+
+
+    <div class="topnav">
+        <div class="dropdown">
+            <button class="dropBtn">Brand</button>
+            <div class="dropdown-content">
+                @foreach (MyWeb.Models.Brand b in brand)
+                {
+                    <form action="~/Phone/SearchPhone" method="POST">
+                        <button name="txtBrandID" value="@b.BrandID">@b.BrandName</button>
+                    </form>
+                }
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropBtn">Category</button>
+            <div class="dropdown-content">
+                @foreach (MyWeb.Models.Category c in category)
+                {
+                    <form action="~/Phone/SearchPhone" method="POST">
+                        <button name="txtCategoryID" value="@c.CategoryID">@c.CategoryName</button>
+                    </form>
+                }
+            </div>
+        </div>
+
+        @if (HttpContext.Current.Session["CART"] != null)
+        {
+            <div class="d5">
+                <form action="~/Cart/ViewCart" method="post">
+                    <button class="acBtn" type="submit">Your Cart</button>
+                </form>
+            </div>
+        }
+        @if ((MyWeb.Models.Account)HttpContext.Current.Session["Account"] != null)
+        {
+            if (acc.RoleID.Equals("1"))
+            {
+                <div class="d2">
+                    <form action="~/Cart/ManageOrder" method="post">
+                        <input type="hidden" name="username" value="@acc.Username" />
+                        <button class="acBtn" type="submit">Manage Order</button>
+                    </form>
+                </div>
+            }
+            else
+            {
+                <div class="d4">
+                    <form action="~/Cart/ViewOrder" method="post">
+                        <input type="hidden" name="txtUsername" value="@acc.Username" />
+                        <button class="acBtn" type="submit">Your Orders</button>
+                    </form>
+                </div>
+            }
+        }
+        @if ((MyWeb.Models.Account)HttpContext.Current.Session["Account"] != null)
+        {
+            if (acc.RoleID.Equals("1"))
+            {
+                <div class="d3">
+                    <form action="~/Phone/CreatePhone" method="post">
+                        <button class="acBtn" type="submit">Create Phone</button>
+                    </form>
+                </div>
+                <div class="d3">
+                    <form action="~/Home/ManageAccount" method="post">
+                        <button class="acBtn" type="submit">Manage Account</button>
+                    </form>
+                </div>
+            }
+        }
+        @if ((MyWeb.Models.Account)HttpContext.Current.Session["Account"] != null)
+        {
+            <div class="d1">
+
+                <div class="logout">
+                    <font color="#fff" style="font-size: 16px">Welcome, @acc.FullName</font>
+                    <form action="~/Home/Logout" method="post" class="f1">
+                        <button class="acBtn" type="submit">Log out</button>
+                    </form>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="d1">
+                <form action="~/Home/Index" class="f1">
+                    <button class="acBtn" type="submit">Log in</button>
+                </form>
+            </div>
+        }
+        <div class="search1" style="max-width: 1500px">
+            <form action="~/Phone/SearchPhone" method="POST" class="search">
+                <input class="txtSearch" type="search" id="search_phone" name="txtSearch" placeholder="what do you need..." />
+                <button class="iconsearch" type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+    </div>
+    <div class="editPhone">
+        <div class="information">
+            <form action="~/Phone/AddPhone" method="Post" id="createPhone-form">
+                <div class="detail">
+                    Phone Name: <input type="text" value="@ViewBag.Name" name="name" />
+                </div>
+                <div class="detail">
+                    Price: <input type="number" value="@ViewBag.Price" name="price" />&#8363;
+                </div>
+                <div class="detail">
+                    Quantity: <input type="number" value="@ViewBag.Quantity" name="quantity" />
+                </div>
+                <div class="detail">
+                    Status: <select name="status">
+                        <option>Available</option>
+                        <option>Unavailable</option>
+                    </select>
+                </div>
+                <div class="detail">
+                    Category: <select name="category">
+                        @foreach (var item in ViewBag.CateList)
+                        {
+                            <option value="@item.CategoryID">@item.CategoryName</option>
+                        }
+                    </select>
+                </div>
+                <div class="detail">
+                    Brand: <select name="brand">
+                        @foreach (var item in ViewBag.BrandList)
+                        {
+                            <option value="@item.BrandID">@item.BrandName</option>
+                        }
+                    </select>
+                </div>
+                <div class="detail">
+                    Image: <input type="text" value="@ViewBag.Image" name="img" />
+                </div>
+                <br/>
+                <button class="editt" type="submit" value="Create">Add this Phone</button>
+            </form>
+        </div>
+        <div class="epimg">
+            <img class="i" src="~/images/4613505.jpg" style="width: 100%; height: 100%" />
+        </div>
+    </div>
+    <form action="~/Phone/LoadList">
+        <button class="back" type="submit" value="Go Back">Go Back Here</button> 
+    </form>
+
+</body>
+</html>

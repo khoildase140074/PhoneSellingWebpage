@@ -1,0 +1,286 @@
+﻿
+@{
+    Layout = null;
+}
+@model List<MyWeb.Models.Product>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/style/loadList.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>LoadList</title>
+</head>
+<body>
+    @{MyWeb.Models.Account acc = (MyWeb.Models.Account)HttpContext.Current.Session["Account"]; }
+    @{ List<MyWeb.Models.Brand> brand = (List<MyWeb.Models.Brand>)HttpContext.Current.Session["Brand"]; }
+    @{ List<MyWeb.Models.Category> category = (List<MyWeb.Models.Category>)HttpContext.Current.Session["Category"]; }
+    @{ int totalPage = (int)HttpContext.Current.Session["Page"];}
+
+
+    <div class="topnav">
+        <div class="dropdown">
+            <button class="dropBtn">Brand</button>
+            <div class="dropdown-content">
+                @foreach (MyWeb.Models.Brand b in brand)
+                {
+                    <form action="~/Phone/SearchPhone" method="POST">
+                        <button name="txtBrandID" value="@b.BrandID">@b.BrandName</button>
+                    </form>
+                }
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropBtn">Category</button>
+            <div class="dropdown-content">
+                @foreach (MyWeb.Models.Category c in category)
+                {
+                    <form action="~/Phone/SearchPhone" method="POST">
+                        <button name="txtCategoryID" value="@c.CategoryID">@c.CategoryName</button>
+                    </form>
+                }
+            </div>
+        </div>
+
+        @if (HttpContext.Current.Session["CART"] != null)
+        {
+            <div class="d5">
+                <form action="~/Cart/ViewCart" method="post">
+                    <button class="acBtn" type="submit">Your Cart</button>
+                </form>
+            </div>
+        }
+        @if ((MyWeb.Models.Account)HttpContext.Current.Session["Account"] != null)
+        {
+            if (acc.RoleID.Equals("1"))
+            {
+                <div class="d2">
+                    <form action="~/Cart/ManageOrder" method="post">
+                        <button class="acBtn" type="submit">Manage Order</button>
+                    </form>
+                </div>
+            }
+            else
+            {
+                <div class="d4">
+                    <form action="~/Cart/ViewOrder" method="post">
+                        <input type="hidden" name="txtUsername" value="@acc.Username" />
+                        <button class="acBtn" type="submit">Your Orders</button>
+                    </form>
+                </div>
+            }
+        }
+
+        @if ((MyWeb.Models.Account)HttpContext.Current.Session["Account"] != null)
+        {
+            if (acc.RoleID.Equals("1"))
+            {
+                <div class="d3">
+                    <form action="~/Phone/CreatePhone" method="post">
+                        <button class="acBtn" type="submit">Create Phone</button>
+                    </form>
+                </div>
+                <div class="d3">
+                    <form action="~/Home/ManageAccount" method="post">
+                        <button class="acBtn" type="submit">Manage Account</button>
+                    </form>
+                </div>
+            }
+            else if (acc.RoleID.Equals("2"))
+            {
+    <div class="d3">
+        <form action="~/Home/UpdateAccount" method="post">
+            <input type="hidden" name="id" value="@acc.Username" />
+            <button class="acBtn" type="submit">Update Account</button>
+        </form>
+    </div>
+            }
+        }
+
+
+        @if ((MyWeb.Models.Account)HttpContext.Current.Session["Account"] != null)
+        {
+            <div class="d1">
+
+                <div class="logout">
+                    <font color="#fff" style="font-size: 16px">Welcome, @acc.FullName</font>
+                    <form action="~/Home/Logout" method="post" class="f1">
+                        <button class="acBtn" type="submit">Log out</button>
+                    </form>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="d1">
+                <form action="~/Home/Index" class="f1">
+                    <button class="acBtn" type="submit">Log in</button>
+                </form>
+            </div>
+        }
+        <div class="search1" style="max-width: 1500px">
+            <form action="~/Phone/SearchPhone" method="POST" class="search">
+                <input class="txtSearch" type="search" id="search_phone" name="txtSearch" placeholder="what do you need..." />
+                <button class="iconsearch" type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+    </div>
+    <div class="slide">
+        <a href="~/Phone/GetDetailByBanner?id=4"><img class="mySlides" src="~/images/img1.PNG" style="width: 1600px; height: 500px" /></a>
+        <a href="~/Phone/GetDetailByBanner?id=5"><img class="mySlides" src="~/images/img2.PNG" style="width: 1600px; height: 500px" /></a>
+        <a href="~/Phone/GetDetailByBanner?id=7"><img class="mySlides" src="~/images/img3.PNG" style="width: 1600px; height: 500px" /></a>
+        <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
+            <button class="btnleft" onclick="plusDivs(-1)">&#10094;</button>
+            <button class="btnright" onclick="plusDivs(1)">&#10095;</button>
+            <div class="dot">
+                <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+                <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+                <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+            </div>
+        </div>
+        <br />
+    </div><br /><br />
+    <div class="bodyy">
+        @if (Model.Count != 0)
+        {
+            foreach (var item in Model)
+            {
+                <form action="~/Phone/GetDetail" method="POST" style="display: inline; padding: 5px; margin: 5px">
+                    @if (item.Status.Equals("Unavailable"))
+                    {
+                        if (acc != null)
+                        {
+                            if (acc.RoleID.Equals("1"))
+                            {
+                                <div class="product">
+                                    <button class="btnProduct" type="submit">
+                                        <div class="all">
+                                            <img class="productImg" src="@Html.DisplayFor(model => item.Image)" style="width: 100%; height: 100%" /><br />
+                                            <div class="productName"><h3>@Html.DisplayFor(model => item.ProductName)</h3></div>
+                                            <div class="productPrice">@Html.DisplayFor(model => item.Price) &#8363;</div>
+                                        </div>
+                                    </button>
+                                </div>
+
+                            }
+                            else
+                            {
+                                <button type="submit" hidden>
+                                    <img src="@Html.DisplayFor(model => item.Image)" width="200" height="200" /><br />
+                                    <h3>@Html.DisplayFor(model => item.ProductName)</h3><br />
+                                    @Html.DisplayFor(model => item.Price) VND
+                                </button>
+                            }
+                        }
+                        else
+                        {
+                            <button type="submit" hidden>
+                                <img src="@Html.DisplayFor(model => item.Image)" width="200" height="200" /><br />
+                                <h3>@Html.DisplayFor(model => item.ProductName)</h3><br />
+                                @Html.DisplayFor(model => item.Price) VND
+                            </button>
+                        }
+
+                    }
+                    else
+                    {
+                        <div class="product">
+                            <button class="btnProduct" type="submit">
+                                <div class="all">
+                                    <div class="productImg"><img src="@Html.DisplayFor(model => item.Image)" style="width: 100%; height: 100%" /></div>
+                                    <div class="productName"><h3>@Html.DisplayFor(model => item.ProductName)</h3></div>
+                                    <div class="productPrice">@Html.DisplayFor(model => item.Price) &#8363;</div>
+                                </div>
+                            </button>
+                        </div>
+                    }
+
+                    <input type="hidden" name="id" value="@Html.DisplayFor(model => item.IDProduct)" />
+                </form>
+
+            }
+        }
+        else
+        {
+            <center>
+                <h2>Oops, your interested item is not available right, could you please try another one?</h2>
+            </center>
+        }
+        <br/><br/>
+        @for (int i = 1; i <= totalPage; i++)
+        {
+            <form action="~/Phone/LoadList" method="get" id="form-page">
+                <input type="hidden" name="page" value="@i" />
+                <button class="page" type="submit"> @i</button>
+            </form>
+        }
+
+        <script>
+            var myIndex = 0;
+            carousel(myIndex);
+            function plusDivs(n) {
+                carousel(slideIndex += n);
+            }
+            function currentDiv(n) {
+                carousel(slideIndex = n);
+            }
+            function carousel(n) {
+                var i;
+
+                var x = document.getElementsByClassName("mySlides");
+                var dots = document.getElementsByClassName("demo");
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
+                myIndex++;
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" w3-white", "");
+                }
+                if (myIndex > x.length) { myIndex = 1 }
+                x[myIndex - 1].style.display = "block";
+
+                setTimeout(carousel, 4000);
+                dots[myIndex - 1].className += " w3-white";
+            }
+        </script>
+
+        <script>
+            var slideIndex = 1;
+            showDivs(slideIndex);
+
+            function plusDivs(n) {
+                showDivs(slideIndex += n);
+            }
+
+            function currentDiv(n) {
+                showDivs(slideIndex = n);
+            }
+
+            function showDivs(n) {
+                var i;
+                var x = document.getElementsByClassName("mySlides");
+                var dots = document.getElementsByClassName("demo");
+                if (n > x.length) { slideIndex = 1 }
+                if (n < 1) { slideIndex = x.length }
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" w3-white", "");
+                }
+                x[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].className += " w3-white";
+            }
+        </script>
+
+
+
+
+
+
+    </div>
+</body>
+</html>
